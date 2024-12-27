@@ -32,3 +32,19 @@
       transform: rotate(360deg);
     }
   } 
+
+
+  ::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    -webkit-border-radius: 1px;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}

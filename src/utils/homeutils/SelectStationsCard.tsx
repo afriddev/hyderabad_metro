@@ -10,7 +10,7 @@ function SelectStationsCard() {
   useEffect(() => {
     getAllStations(undefined, {
       onSuccess(data) {
-        if (data?.message === "SUCECSS") {
+        if (data?.message === "SUCCESS") {
           if(data?.data?.length > 0 ){
             setAllStations(data?.data)
           }
@@ -22,7 +22,7 @@ function SelectStationsCard() {
   return (
     <div className="w-full h-full border-2 border-white rounded-xl">
       <div className="mt-20  px-10">
-        <SearchableDropDown data={allStations } placeHolder="From Station" />
+        <SearchableDropDown data={allStations as never } placeHolder="From Station" />
       </div>
 
       {isPending && <AppSpinner />}
