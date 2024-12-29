@@ -2,36 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-.loader {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: inline-block;
-    border-top: 4px solid #33ff00;
-    border-right: 4px solid transparent;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+/* Container that holds the spinner and image */
+.spinner-container {
+  position: relative;
+  width: 80px;  /* Size of the spinner */
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  animation: spin 2s linear infinite; /* Rotating animation for the outer spinner */
+}
+
+.spinner-container img {
+  position: absolute;
+  width: 50px;  /* Adjust image size */
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #3e4042;  /* Adjust border color */
+  border-top: 4px solid #3498db;  /* Adjust spinner color */
+  animation: rotate 2s linear infinite; /* Rotation animation for the spinner */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  .loader::after {
-    content: '';  
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border-bottom: 4px solid #c300ff;
-    border-left: 4px solid transparent;
+  100% {
+    transform: rotate(360deg);
   }
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } 
+}
+
 
 
   ::-webkit-scrollbar {
