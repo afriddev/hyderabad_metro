@@ -3,8 +3,13 @@ import SelectStationsCard from "./SelectStationsCard";
 
 function Home() {
   function handleGithubClick() {
+    window.open("https://github.com/afriddev/hyderabad_metro");
+  }
+  
+  function handleNameClick() {
     window.open("https://github.com/afriddev");
   }
+
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-between pb-10 relative">
@@ -35,7 +40,7 @@ function Home() {
         <div className="text-white/70 lg:text-lg">
           Developed By{" "}
           <span
-            onClick={handleGithubClick}
+            onClick={handleNameClick}
             className="text-white mx-1   font-bold border-b cursor-pointer"
           >
             SHAIK AFRID
