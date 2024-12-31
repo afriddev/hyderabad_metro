@@ -18,7 +18,7 @@ Check out live project from here: [hyderabadmetro](https://hyderabadmetro.vercel
 
 #### Live Web
 
-- [Hyderabadmetro.vercel.app](https://hyderabadmetro.vercel.app/)
+- [Hyderabadmetro](https://hyderabadmetro.vercel.app/)
 
 #### Api Documentation
 
