@@ -102,46 +102,39 @@ function StationRouteDialog({ data, onClose }: StationRouteDialogInterface) {
                     </div>
                   </div>
                 )}
-
-                {(index !== 0 &&
-                index !== data?.route?.length - 1 &&
-                item?.interChange
-                  ? item?.lineNo === data?.fromStation?.lineNo
-                  : false) && (
-                  <div className="flex  gap-3 items-center bg-foreground/10 rounded mb-3">
-                    <div className="bg-purple-600 rounded-tl-sm pr-2 rounded-bl-sm text-background px-6 py-2 w-fit  flex items-center gap-2 ">
-                      Change Here
-                      <TfiHandPointRight className="w-4 h-4" />
-                    </div>
-                    <div className="font-semibold">
-                      {item?.lineNo === 1
-                        ? "Red line "
+                <div className="flex items-center gap-3 pl-3    ">
+                  <MdDoNotDisturbOnTotalSilence
+                    className={`${
+                      item?.lineNo === 1
+                        ? "text-red-500"
                         : item?.lineNo === 2
-                        ? "Blue line "
-                        : "green line "}
-                      {item?.stationName[0]}
-                    </div>
-                  </div>
-                )}
+                        ? "text-blue-500"
+                        : "text-green-500"
+                    }`}
+                  />
+                  <div>{item?.stationName[0]}</div>
+                </div>
 
-                {(index === 0 ||
-                index === data?.route?.length - 1 ||
-                item?.interChange
-                  ? item?.lineNo !== data?.fromStation?.lineNo
-                  : true) && (
-                  <div className="flex items-center gap-3 pl-3    ">
-                    <MdDoNotDisturbOnTotalSilence
-                      className={`${
-                        item?.lineNo === 1
-                          ? "text-red-500"
+                {index !== 0 &&
+                  index !== data?.route?.length - 1 &&
+                  data?.fromStation?.lineNo !== data?.toStation?.lineNo && item?.interChange && item?.lineNo !== data?.route[index+1]?.lineNo  && (
+                    <div className="flex  gap-3 items-center bg-foreground/10 rounded mt-3">
+                      <div className="bg-purple-600 rounded-tl-sm pr-2 rounded-bl-sm text-background px-6 py-2 w-fit  flex items-center gap-2 ">
+                        Change Here
+                        <TfiHandPointRight className="w-4 h-4" />
+                      </div>
+                      <div className="font-semibold">
+                        {item?.lineNo === 1
+                          ? "Red line "
                           : item?.lineNo === 2
-                          ? "text-blue-500"
-                          : "text-green-500"
-                      }`}
-                    />
-                    <div>{item?.stationName[0]}</div>
-                  </div>
-                )}
+                          ? "Blue line "
+                          : "green line "}
+                        {item?.stationName[0]}
+                      </div>
+                    </div>
+                  )}
+
+                
 
                 {index === data?.route?.length - 1 && (
                   <div className="flex  gap-3 items-center bg-foreground/10 rounded mb-3 mt-3">

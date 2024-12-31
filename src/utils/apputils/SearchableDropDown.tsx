@@ -7,6 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { PiX } from "react-icons/pi";
 
 interface SearchableDropDownInterface {
   placeHolder: string;
@@ -130,6 +131,12 @@ function SearchableDropDown({
       }
     }
   }
+  function handleClearClick(){
+    handleSelectClick(undefined,0)
+    setValue("")
+    setDropDownData(data)
+
+  }
 
   return (
     <div >
@@ -147,9 +154,14 @@ function SearchableDropDown({
               }}
               onKeyDown={handleKeyPress}
               value={value}
-              className={`w-[80vw] lg:w-full  pl-9 h-12 px-3 text-foreground outline-none border border-foreground rounded-md`}
+              className={`w-[80vw] lg:w-full  pl-9 h-12 px-3 text-foreground outline-none border border-foreground rounded-md pr-12`}
               placeholder={placeHolder}
             />
+            {
+              value && <div onClick={handleClearClick} className="absolute right-2 cursor-pointer hover:bg-black/10 h-7 flex items-center justify-center rounded-full w-7  ">
+              <PiX className="text-black" />
+            </div>
+            }
           </div>
         </PopoverTrigger>
         <PopoverContent className="p-0 w-[80vw] lg:w-[26vw]  rounded-md border border-foreground">
