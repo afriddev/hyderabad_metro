@@ -14,6 +14,7 @@ The Hyderabad Metro API provides real-time data on metro schedules, routes, and 
 
 #### Authors
 
-- [AFRID SHAIK](https://www.github.com/afriddev)
-
+- [Afrid Shaik](https://www.github.com/afriddev)
+- [Portfolio](https://afriddev.vercel.app/)
+- [Gmail](mailto:afridayan01@gmail.com)
 
