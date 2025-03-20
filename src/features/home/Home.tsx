@@ -19,7 +19,10 @@ function Home() {
          sleep 😴
         </div>
 
-        <div>2. To change any station details OR to solve BUG feel free to contact to my Gmail, You need Secret Key 😁</div>
+        <div>2. To change any station details OR to any solve BUG feel free to hit a message to my Gmail <a className=" border-b text-blue-600 border-blue-600 cursor-pointer" onClick={()=>{
+
+window.open("mailto:"+"afridayan01@gmail.com");
+        }} >afridayan01@gmail.com</a></div>
       </div>
 
       <div className="items-center w-full justify-between flex px-5 lg:px-20 py-2 pt-10">
