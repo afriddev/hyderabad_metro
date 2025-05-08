@@ -1,6 +1,6 @@
 import { stationRoutePayloadType } from "@/types/appDatatypes";
 
-const baseUrl = "https://hyderabad-metro-api.onrender.com";
+const baseUrl = "https://hyderabad-metro-api.vercel.app";
 
 export async function getAllStationsAPI() {
   const server = await fetch(baseUrl + "/api/allstations");
